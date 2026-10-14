@@ -1,7 +1,7 @@
 # AWS Infrastructure Lab
 
 <p align="left">
-  <img src="https://img.shields.io/badge/Amazon_Web_Services-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white" alt="Amazon Web Services">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS logo" height="72">
 </p>
 
 
