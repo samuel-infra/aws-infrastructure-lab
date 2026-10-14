@@ -73,9 +73,21 @@ Amazon VPC · Amazon EC2 · Amazon EBS · AWS Security Groups · Windows Server 
 - Integrating block storage, SMB services and SQL Server
 - Verifying infrastructure through hands-on tests
 
-## Evidence
 
-Screenshots from the original lab report can be added to a `screenshots/` directory. Do not upload passwords, access keys, public IPs or sensitive account identifiers.
+## Lab Screenshots
+
+**AWS VPC and subnet configuration**
+
+![AWS VPC and subnet configuration](screenshots/vpc-network-report-page-56.png)
+
+**Private network connectivity between EC2 instances**
+
+![Private network connectivity between EC2 instances](screenshots/private-connectivity-report-page-65.png)
+
+**EBS volume and Windows Disk Management**
+
+![EBS volume and Windows Disk Management](screenshots/ebs-storage-report-page-70.png)
+
 
 ---
 
