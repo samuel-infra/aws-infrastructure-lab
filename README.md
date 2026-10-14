@@ -1,13 +1,13 @@
-# ☁️ AWS Infrastructure Lab
+# AWS Infrastructure Lab
 
-![AWS](https://img.shields.io/badge/AWS-EC2%20%7C%20VPC%20%7C%20EBS-FF9900?logo=amazonwebservices&logoColor=white)
-![Windows Server](https://img.shields.io/badge/Windows-Server-0078D4)
-![SQL Server](https://img.shields.io/badge/SQL%20Server-2025%20Express-CC2927)
-![Status](https://img.shields.io/badge/Status-Lab_Completed-brightgreen)
+<p align="left">
+  <img src="https://img.shields.io/badge/Amazon_Web_Services-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white" alt="Amazon Web Services">
+</p>
+
 
 > **Hands-on AWS infrastructure project** demonstrating VPC networking, two Windows Server EC2 instances, security controls, private connectivity, EBS-backed shared storage, and SQL Server database validation.
 
-## 🎯 Project Summary
+## Project Summary
 
 This repository documents an AWS infrastructure lab for the fictional company **Sweditech AB**. The purpose was to build a small two-server environment and verify how networking, Windows administration, storage and SQL Server work together.
 
@@ -25,13 +25,13 @@ The environment uses two EC2 instances communicating over private IP addresses. 
 - Installed **SQL Server 2025 Express** and **SSMS 22**
 - Created **SweditechDB** and tested the **Anstallda** table
 
-## 🧰 Technology Stack
+## Technology Stack
 
 `AWS` · `Amazon VPC` · `Amazon EC2` · `Amazon EBS` · `Security Groups` · `Windows Server` · `Windows Firewall` · `RDP` · `SMB` · `SQL Server 2025 Express` · `SSMS 22`
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```text
                   AWS VPC
@@ -58,7 +58,7 @@ The environment uses two EC2 instances communicating over private IP addresses. 
 
 The diagram shows the roles of the two machines and their private communication. It is a simplified lab overview rather than a production reference architecture.
 
-## 🌐 Network Design
+## Network Design
 
 The lab uses an AWS VPC with subnets, routing and an Internet Gateway. The two EC2 instances have private addresses inside the VPC and communicate using those addresses instead of relying on their public endpoints.
 
@@ -75,7 +75,7 @@ The screenshot below documents the AWS VPC and network configuration used for th
 
 ![AWS VPC and subnet configuration](screenshots/vpc-network-report-page-56.png)
 
-## 🖥️ EC2 Virtual Machines
+## EC2 Virtual Machines
 
 ### Sweditech-AWS-VM01
 
@@ -93,7 +93,7 @@ VM02 provided the storage and database workloads:
 
 Keeping the two instances separate made it possible to test whether services on VM02 were actually reachable from another server.
 
-## 🔐 Network Security
+## Network Security
 
 An AWS Security Group named **Sweditech-AWS-SG** was used alongside Windows Firewall configuration.
 
@@ -108,7 +108,7 @@ Security Groups control traffic at the AWS network interface level, while Window
 
 **Security consideration:** RDP and SMB access should remain limited to trusted sources. The lab rules should not be copied directly into a production environment without reviewing source ranges and exposure.
 
-## 🧪 Private Connectivity Validation
+## Private Connectivity Validation
 
 The two Windows Server instances were tested using their private IP addresses. Ping was used to check reachability between the servers.
 
@@ -118,7 +118,7 @@ The goal was to confirm that the instances could communicate across the configur
 
 A successful ping validates ICMP reachability, but does not by itself prove that SMB or SQL Server is accessible. Those services were therefore checked separately in the lab.
 
-## 💾 Amazon EBS and Shared Storage
+## Amazon EBS and Shared Storage
 
 An additional **10 GB Amazon EBS volume** was attached to VM02 and configured in Windows. The volume provided separate block storage for the shared-folder exercise.
 
@@ -142,7 +142,7 @@ The practical test consisted of preparing the EBS volume, configuring the Window
 
 **Important distinction:** EBS is block storage attached to an EC2 instance. In this lab, the shared access between VMs was provided by **Windows SMB**, not by mounting the same EBS volume directly on both servers.
 
-## 🗄️ SQL Server and Database
+## SQL Server and Database
 
 SQL Server 2025 Express was installed on VM02. SQL Server Management Studio 22 was also installed on VM02 for local database administration.
 
@@ -168,7 +168,7 @@ This verified SQL Server installation and local database operations on VM02. It 
 
 ![SQL Server database validation](screenshots/sql-database-report-page-84.png)
 
-## 🔧 Troubleshooting and Verification
+## Troubleshooting and Verification
 
 This project brought together several different layers of infrastructure that needed to work in the right order:
 
@@ -180,7 +180,7 @@ This project brought together several different layers of infrastructure that ne
 
 Testing each part separately helped distinguish network reachability from application-level functionality.
 
-## ✅ Validation Checklist
+## Validation Checklist
 
 - [x] AWS VPC, subnets and routing configured
 - [x] Two Windows Server EC2 instances deployed
@@ -195,19 +195,19 @@ Testing each part separately helped distinguish network reachability from applic
 - [x] SweditechDB and Anstallda table created
 - [x] Database test records inserted and retrieved
 
-## 🛡️ Security Considerations
+## Security Considerations
 
 This is an educational lab rather than a production-hardened environment. A production design would require additional review of identity and access management, patching, logging, backups, network exposure and least-privilege rules.
 
 No passwords, access keys or credentials are intentionally included in this README.
 
-## 📚 What I Learned
+## What I Learned
 
 The lab provided hands-on experience in combining AWS networking, Windows Server administration, storage and SQL Server in one environment. In particular, it reinforced the difference between a successful network test and a working application service, and the relationship between AWS-level and Windows-level firewall controls.
 
 It also demonstrated how EBS block storage can support a Windows file-sharing workload, and how to validate a SQL Server database through SSMS.
 
-## 🚧 Project Status
+## Project Status
 
 **Practical lab completed.** This repository documents the infrastructure implementation and its verification. The screenshots are selected evidence from the original report.
 
